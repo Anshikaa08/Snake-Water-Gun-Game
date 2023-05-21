@@ -1,0 +1,38 @@
+# //////////SNAKE WATER GUN GAME////////////
+import random
+l=["snake","water","gun"]
+# l1=[]
+i=11
+c=0
+f=0
+for i in range(11):
+    n=input("Enter snake or water or gun\n")
+    temp=random.choice(l)
+    if(n==temp):
+        print("fusss")
+    elif(n=="snake" and temp=="water"):
+        print("Winner is n,value of temp is:",temp)
+        c += 1
+    elif(n=="water" and temp=="snake"):
+        print("Winner is temp,value of temp is:",temp)
+        f += 1
+    elif (n == "water" and temp == "gun"):
+        print("Winner is n,value of temp is:",temp)
+        c += 1
+    elif (n == "gun" and temp == "water"):
+        print("Winner is temp,value of temp is:",temp)
+        f += 1
+    elif (n == "snake" and temp == "gun"):
+        print("Winner is temp,value of temp is:",temp)
+        f += 1
+    else:
+        print("Winner is n,value of temp is:",temp)
+        c += 1
+    # i=i-1
+print("*******/////FINAL WINNER ANNOUNCEMENT/////*******")
+if(c>f):
+ print("Winner is n from votes",c-f)
+elif(c==f):
+    print("match tie")
+else:
+    print("Winner is temp from votes",f-c)
